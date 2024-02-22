@@ -1,0 +1,68 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/digital-techno.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.contenedor {
+    position: relative;
+    display: flex;
+    width: 970px;
+    height: 500px;
+}
+
+textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffc7a1; /* Color de fondo de los textareas */
+    font-size: 16px;
+    color: #555; /* Color del texto */
+    resize: both;
+    outline: auto;
+}
+
+.mensaje {
+    width: 50%;
+    height: 200px;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.btn {
+    display: flex;
+    margin: auto 20px;
+}
+
+.btn button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f59a51; /* Color de los botones */
+    color: #fff; /* Color del texto de los botones */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn button:hover {
+    background-color: #b7a4d4; /* Color de los botones al pasar el ratón */
+}

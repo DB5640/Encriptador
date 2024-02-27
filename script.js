@@ -11,6 +11,14 @@ const matriz_code = [
     ["u", "ufat"]
 ];
 
+const copiar = () => {
+    text = mensaje.value
+    navigator.clipboard.writeText(text)
+    const botonCopiar = document.getElementById("btnCopiar")
+    console.log(botonCopiar);
+    botonCopiar.innerHTML = "Copiado! ✔"
+}
+
 const desencriptar = () => {
     let resultado = "";
     console.log("Entré a la función desencriptar");

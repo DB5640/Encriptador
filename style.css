@@ -36,10 +36,7 @@ textarea {
     outline: auto;
 }
 
-.mensaje {
-    margin-right: auto;
-    margin-left: 0;
-}
+
 
 .btn {
     display: flex;
@@ -51,7 +48,6 @@ textarea {
     text-align: center;
     vertical-align: top;
     box-sizing: border-box;
-    display: inline-block;
     margin: 0 10px;
     padding: 10px 20px;
     border: none;
@@ -64,6 +60,36 @@ textarea {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.section-mensaje{
+    position: relative;
+    width: auto;
+}
+
+.mensaje {
+    width: 100%;
+    resize: none; /* Evita que el usuario pueda cambiar el tamaño */
+    margin-bottom: 10px; /* Espacio entre el textarea y el botón */
+}
+
+.btnCopiar{
+    display: inline-block;
+    position: absolute;
+    padding: 10px 20px;
+    bottom: 0;
+    right: 25%;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f59a51; /* Color de los botones */
+    color: #fff; /* Color del texto de los botones */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .btn button:hover {
     background-color: #b7a4d4; /* Color de los botones al pasar el ratón */
+}
+.btnCopiar:hover{
+    background-color: #b7a4d4;
 }

@@ -2,6 +2,7 @@ const campoTexto = document.querySelector("#campo-texto")
 console.log(campoTexto);
 const mensaje = document.querySelector("#campo-mensaje")
 console.log(mensaje);
+const botonCopiar = document.getElementById("btnCopiar")
 
 const matriz_code = [
     ["e", "enter"],
@@ -14,56 +15,36 @@ const matriz_code = [
 const copiar = () => {
     text = mensaje.value
     navigator.clipboard.writeText(text)
-    const botonCopiar = document.getElementById("btnCopiar")
     console.log(botonCopiar);
     botonCopiar.innerHTML = "Copiado! ✔"
 }
 
 const desencriptar = () => {
-    let resultado = "";
-    console.log("Entré a la función desencriptar");
-    let textoEncriptado = campoTexto.value;
-    console.log("Texto encriptado: ", textoEncriptado);
-    let i = 0;
-    while (i < textoEncriptado.length) {
-        let encontrado = false;
-        for (let j = 0; !encontrado && j < matriz_code.length; j++) {
-            if (textoEncriptado.substring(i).startsWith(matriz_code[j][1])) {
-                resultado += matriz_code[j][0];
-                encontrado = true;
-                i += matriz_code[j][1].length;
+    let texto = campoTexto.value.toLowerCase();
+            console.log("Texto en minusculas: ", texto);
+            
+            for (let i = 0; i < matriz_code.length; i++) {
+            texto.replaceAll(matriz_code[i][1], matriz_code[i][0]);
             }
-        }
-        if (!encontrado) {
-            resultado += textoEncriptado[i];
-            i++;
-        }
-    }
-    console.log("Texto desencriptado: ", resultado);
-    mensaje.innerHTML = resultado;
-    return resultado;
+            
+            mensaje.innerHTML = texto;
+            campoTexto.value = "";
+            botonCopiar.innerHTML = "Copiar"
 }
 
 
     const encriptar = () => {
-        let resultado = "";
-            console.log("Entre a la funcion encriptar");
-            let texto = campoTexto.value;
-            for (let i = 0; i < texto.length; i++) {
-                if (/[aeiou]/gi.test(texto[i])) {
-                    let encontrado = false;
-                    for (let j = 0; !encontrado && j < matriz_code.length; j++) {
-                        if (matriz_code[j][0] === texto[i]) {
-                            resultado += matriz_code[j][1];
-                            encontrado = true;
-                        }
-                    }
-    
-                } else {
-                    resultado += texto[i];
-                }
+            let texto = campoTexto.value.toLowerCase();
+            console.log("Texto en minusculas: ", texto);
+            
+            for (let i = 0; i < matriz_code.length; i++) {
+            texto.replaceAll(matriz_code[i][0], matriz_code[i][1]);
             }
-            mensaje.innerHTML = resultado;
+            
+            mensaje.innerHTML = texto;
+            campoTexto.value = "";
+            botonCopiar.innerHTML = "Copiar"
+
     }
 
 

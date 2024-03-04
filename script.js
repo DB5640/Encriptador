@@ -24,7 +24,7 @@ const desencriptar = () => {
             console.log("Texto en minusculas: ", texto);
             
             for (let i = 0; i < matriz_code.length; i++) {
-            texto.replaceAll(matriz_code[i][1], matriz_code[i][0]);
+                texto = texto.replaceAll(matriz_code[i][1], matriz_code[i][0]);
             }
             
             mensaje.innerHTML = texto;
@@ -38,9 +38,9 @@ const desencriptar = () => {
             console.log("Texto en minusculas: ", texto);
             
             for (let i = 0; i < matriz_code.length; i++) {
-            texto.replaceAll(matriz_code[i][0], matriz_code[i][1]);
+           texto = texto.replaceAll(matriz_code[i][0], matriz_code[i][1]);
             }
-            
+            console.log(`texto luego de la encriptacion:  ${texto}`);
             mensaje.innerHTML = texto;
             campoTexto.value = "";
             botonCopiar.innerHTML = "Copiar"
